@@ -121,6 +121,107 @@ body::after {
     line-height: 1.8;
 }
 
+/* Video Showcase Section */
+.video-showcase {
+    padding: 60px 20px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(5px);
+    margin: 0 -20px;
+}
+
+.video-showcase h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #2c3e50;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.showcase-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    min-height: 250px;
+}
+
+/* Video Modal */
+.video-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-modal.active {
+    display: flex;
+}
+
+.video-modal-content {
+    position: relative;
+    width: 300px;
+    max-width: 90%;
+}
+
+.video-modal-content video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.video-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border: none;
+    font-size: 40px;
+    color: #333;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, transform 0.2s;
+    z-index: 1001;
+    line-height: 1;
+    padding: 0;
+}
+
+.video-modal-close:hover {
+    background: #f0f0f0;
+    transform: scale(1.1);
+}
+
 /* Services Section */
 .services {
     padding: 60px 20px;
@@ -138,7 +239,7 @@ body::after {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
@@ -401,7 +502,8 @@ body::after {
 
     .services-grid,
     .reviews-grid,
-    .gallery-grid {
+    .gallery-grid,
+    .video-grid {
         grid-template-columns: 1fr;
     }
 }
